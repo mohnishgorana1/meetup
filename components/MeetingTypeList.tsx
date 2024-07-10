@@ -14,7 +14,8 @@ function MeetingTypeList() {
     const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
 
     const { user } = useUser();
-    const client = useStreamVideoClient();
+
+    const client = useStreamVideoClient(); // apikey wala client jo provider se app ko mila h
     const [values, setValues] = useState({
         dateTime: new Date(),
         description: "",
