@@ -11,11 +11,11 @@ import { useToast } from "./ui/use-toast"
 function MeetingTypeList() {
     const router = useRouter()
     const { toast } = useToast()
-    const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
-
     const { user } = useUser();
 
+    const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
     const client = useStreamVideoClient(); // apikey wala client jo provider se app ko mila h
+
     const [values, setValues] = useState({
         dateTime: new Date(),
         description: "",

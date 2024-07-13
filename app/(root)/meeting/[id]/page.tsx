@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 
 function Meeting({ params }: { params: { id: string } }) {
   const { user, isLoaded } = useUser()
+
   const [isSetupComplete, setIsSetupComplete] = useState(false)
 
   const { call, isCallLoading } = useGetCallById(params.id)
@@ -21,7 +22,7 @@ function Meeting({ params }: { params: { id: string } }) {
       <StreamCall call={call}>
         <StreamTheme>
           {!isSetupComplete ? (
-            <MeetingSetup />
+            <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
           ) : (
             <MeetingRoom />
           )}
